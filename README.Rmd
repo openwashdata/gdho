@@ -1,0 +1,90 @@
+---
+output: github_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# gdho
+
+<!-- badges: start -->
+
+[![License: CC BY
+4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+<!-- badges: end -->
+
+The goal of `gdho` is to 
+
+## Installation
+
+You can install the development version of gdho from
+[GitHub](https://github.com/gdho) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("openwashdata/gdho")
+```
+
+Alternatively, you can download the individual datasets as CSV or XLSX
+file from the table below.
+
+| dataset       | CSV                                                                                                    | XLSX                                                                                                     |
+|--------------|-----------------------------|-----------------------------|
+| dataname      | [Download CSV]()      | [Download XLSX]()      |
+
+# Introduction
+
+
+
+
+# Data
+
+The package provides access to XX datasets ...
+
+```{r}
+library(gdho)
+```
+
+```
+The `gdho` data set has {ncol(gdho)} variables and {nrow(gdho)} observations. For an overview of the variable names, see the following table.  
+```
+
+```{r, eval=FALSE}
+gdho
+```
+
+```{r, echo=FALSE}
+readr::read_csv("data-raw/dictionary.csv") |>
+  dplyr::filter(file_name == "") |>  ##TODO: FILL ME
+  dplyr::select(variable_name:description) |> 
+  knitr::kable()
+```
+
+## Example
+Write a demo snippet here.
+
+```{r}
+
+```
+
+# License 
+Data are available as [CC-BY](https://github.com/openwashdata/gdho/blob/main/LICENSE.md).
+
+# Citation
+```{r}
+citation()
+```
+
+## Related References

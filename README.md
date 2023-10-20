@@ -10,7 +10,13 @@
 
 <!-- badges: end -->
 
-The goal of `gdho` is to
+The goal of `gdho` is to provide a detailed list of global humanitarian
+organizations complied by [Humanitarian
+Outcomes](https://www.humanitarianoutcomes.org/projects/gdho) which
+contains basic information such as organization website and headquarter
+location, as well as, operational information such as annual
+expenditure. The original database is updated annually and this package
+version uses data retrieved on September 20, 2023.
 
 ## Installation
 
@@ -25,9 +31,10 @@ devtools::install_github("openwashdata/gdho")
 Alternatively, you can download the individual datasets as CSV or XLSX
 file from the table below.
 
-| dataset  | CSV              | XLSX              |
-|----------|------------------|-------------------|
-| dataname | [Download CSV]() | [Download XLSX]() |
+| dataset   | CSV              | XLSX              |
+|-----------|------------------|-------------------|
+| gdho      | [Download CSV]() | [Download XLSX]() |
+| gdho_full | [Download CSV]() | [Download XLSX]() |
 
 # Introduction
 
@@ -45,7 +52,7 @@ library(gdho)
 gdho
 ```
 
-    #> Rows: 0 Columns: 5
+    #> Rows: 34 Columns: 5
     #> ── Column specification ────────────────────────────────────────────────────────
     #> Delimiter: ","
     #> chr (5): directory, file_name, variable_name, variable_type, description

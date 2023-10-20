@@ -25,7 +25,13 @@ knitr::opts_chunk$set(
 
 <!-- badges: end -->
 
-The goal of `gdho` is to 
+The goal of `gdho` is to provide a detailed list of global humanitarian
+organizations complied by [Humanitarian
+Outcomes](https://www.humanitarianoutcomes.org/projects/gdho) which
+contains basic information such as organization website and headquarter
+location, as well as, operational information such as annual
+expenditure. The original database is updated annually and this package
+version uses data retrieved on September 20, 2023.
 
 ## Installation
 
@@ -40,14 +46,12 @@ devtools::install_github("openwashdata/gdho")
 Alternatively, you can download the individual datasets as CSV or XLSX
 file from the table below.
 
-| dataset       | CSV                                                                                                    | XLSX                                                                                                     |
-|--------------|-----------------------------|-----------------------------|
-| dataname      | [Download CSV]()      | [Download XLSX]()      |
+| dataset   | CSV              | XLSX              |
+|-----------|------------------|-------------------|
+| gdho      | [Download CSV]() | [Download XLSX]() |
+| gdho_full | [Download CSV]() | [Download XLSX]() |
 
 # Introduction
-
-
-
 
 # Data
 
@@ -57,7 +61,7 @@ The package provides access to XX datasets ...
 library(gdho)
 ```
 
-```
+```         
 The `gdho` data set has {ncol(gdho)} variables and {nrow(gdho)} observations. For an overview of the variable names, see the following table.  
 ```
 
@@ -67,24 +71,28 @@ gdho
 
 ```{r, echo=FALSE}
 readr::read_csv("data-raw/dictionary.csv") |>
-  dplyr::filter(file_name == "") |>  ##TODO: FILL ME
+  dplyr::filter(file_name == "gdho.rda") |>  ##TODO: FILL ME
   dplyr::select(variable_name:description) |> 
   knitr::kable()
 ```
 
 ## Example
+
 Write a demo snippet here.
 
 ```{r}
 
 ```
 
-# License 
-Data are available as [CC-BY](https://github.com/openwashdata/gdho/blob/main/LICENSE.md).
+# License
+
+Data are available as
+[CC-BY](https://github.com/openwashdata/gdho/blob/main/LICENSE.md).
 
 # Citation
+
 ```{r}
-citation()
+citation(gdho)
 ```
 
 ## Related References

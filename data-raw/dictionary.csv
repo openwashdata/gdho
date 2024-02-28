@@ -33,3 +33,36 @@ data,gdho_full.rda,humexp_approx_usd,double,Approximate humanitarian expenditure
 data,gdho_full.rda,humexp_imputed,character,Imputed approximate humanitarian expenditure in USD
 data,gdho_full.rda,humexp_inflation_adjusted,double,Approximate humanitarian expenditure adjusted for inflation
 data,gdho_full.rda,countries,integer,Individual countries where organisations are operational
+data,gdho.rda,id,integer,A unique Id for each organisation
+data,gdho.rda,year,integer,Latest year information is available for
+data,gdho.rda,name,character,Full organisation name
+data,gdho.rda,abbreviated_name,character,Organisation abbreviation or acronym
+data,gdho.rda,type,integer,"National NGO (NNGO), International NGO (INGO), UN, Red Cross/Crescent classification"
+data,gdho.rda,international_or_national,integer,Organisation’s reach
+data,gdho.rda,website,character,Organisation page url
+data,gdho.rda,hq_location,character,Country where HQ office is located
+data,gdho.rda,year_founded,integer,Year of establishment
+data,gdho.rda,year_closed,integer,Year closed or last year of visible activity
+data,gdho.rda,countries_of_operation_count,integer,Number of countries operational in
+data,gdho.rda,sector,integer,"Children/youth, coordination, disabilities, education, environment, food security/agriculture, health, landmines, livelihoods, logistics/communications, nutrition, refugees, shelter, veterinary, water/sanitation, women"
+data,gdho.rda,religious_or_secular,integer,Organisations religious affiliation
+data,gdho.rda,religion,character,"Specific religious affiliation (ex. Catholic, Islamic, Jewish)"
+data,gdho.rda,red_cross_code_of_conduct_signatory,integer,Signatory status of the organisation
+data,gdho.rda,chs_member,integer,Signatory status to the Core Humanitarian Standard on Quality and Accountability 
+data,gdho.rda,interaction_member,integer,Membership status
+data,gdho.rda,icva_member,integer,Membership status
+data,gdho.rda,staff,integer,Actual number of total staff
+data,gdho.rda,staff_imputed,character,Imputed number of total staff
+data,gdho.rda,natl,integer,Actual number of national staff
+data,gdho.rda,natl_imputed,character,Imputed number of national staff
+data,gdho.rda,intl,integer,Actual number of international staff
+data,gdho.rda,intl_imputed,character,Imputed number of international staff
+data,gdho.rda,percent_intl,double,Percent of total staff that are international
+data,gdho.rda,ope_approx_usd,double,Actual approximate annual operational program expenditure in USD
+data,gdho.rda,ope_imputed,character,Imputed approximate annual operational program expenditure in USD
+data,gdho.rda,ope/staff,double,Percent of operational program expenditure per staff member
+data,gdho.rda,ope_inflation_adjusted,double,Operational program expenditure adjusted for inflation
+data,gdho.rda,ope_original_currency,character,Actual approximate operational program expenditure in original currency used by organisation
+data,gdho.rda,humexp_approx_usd,double,Approximate humanitarian expenditure in USD
+data,gdho.rda,humexp_imputed,character,Imputed approximate humanitarian expenditure in USD
+data,gdho.rda,humexp_inflation_adjusted,double,Approximate humanitarian expenditure adjusted for inflation

@@ -56,11 +56,17 @@ gdho <- gdho_full[1:33] # a shorter version that does not include all country co
 
 ## Read and write dictionary ---------------------------------------------------
 original_dict <- read_excel("./data-raw/gdho_read_me.xlsx", skip = 2)
-dictionary <- tibble(directory = "data",
+gdho_full_dictionary <- tibble(directory = "data",
        file_name = "gdho_full.rda",
        variable_name = c(colnames(gdho_full)[1:33], "countries"),
        variable_type =  c(sapply(gdho_full, typeof)[1:33], "integer"),
        description = original_dict$`Content description`)
+gdho_dict <- tibble(directory = "data",
+                    file_name = "gdho.rda",
+                    variable_name = colnames(gdho_full)[1:33],
+                    variable_type = sapply(gdho_full, typeof)[1:33],
+                    description = original_dict$`Content description`[1:33])
+dictionary <- rbind(gdho_full_dictionary, gdho_dict)
 write_csv(dictionary, "./data-raw/dictionary.csv")
 
 ## Build R datasets ------------------------------------------------------------

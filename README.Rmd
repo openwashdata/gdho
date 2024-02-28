@@ -1,5 +1,6 @@
 ---
 output: github_document
+always_allow_html: true
 editor_options: 
   markdown: 
     wrap: 72
@@ -14,6 +15,8 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(tidyverse)
 ```
 
 # gdho
@@ -46,10 +49,21 @@ devtools::install_github("openwashdata/gdho")
 Alternatively, you can download the individual datasets as CSV or XLSX
 file from the table below.
 
-| dataset   | CSV              | XLSX              |
-|-----------|------------------|-------------------|
-| gdho      | [Download CSV]() | [Download XLSX]() |
-| gdho_full | [Download CSV]() | [Download XLSX]() |
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+extdata_path <- "https://github.com/openwashdata/gdho/raw/main/inst/extdata/"
+
+read_csv("data-raw/dictionary.csv") |> 
+  distinct(file_name) |> 
+  dplyr::mutate(file_name = str_remove(file_name, ".rda")) |> 
+  dplyr::rename(dataset = file_name) |> 
+  mutate(
+    CSV = paste0("[Download CSV](", extdata_path, dataset, ".csv)"),
+    XLSX = paste0("[Download XLSX](", extdata_path, dataset, ".xlsx)")
+  ) |> 
+  knitr::kable()
+
+```
 
 # Introduction
 
@@ -65,15 +79,21 @@ library(gdho)
 The `gdho` data set has {ncol(gdho)} variables and {nrow(gdho)} observations. For an overview of the variable names, see the following table.  
 ```
 
-```{r, eval=FALSE}
-gdho
+```{r}
+gdho |>
+  head() |>
+  gt::gt()
 ```
+
+For an overview of the variable names, see the following table.  
 
 ```{r, echo=FALSE}
 readr::read_csv("data-raw/dictionary.csv") |>
-  dplyr::filter(file_name == "gdho.rda") |>  ##TODO: FILL ME
+  dplyr::filter(file_name == "gdho.rda") |>
   dplyr::select(variable_name:description) |> 
-  knitr::kable()
+  knitr::kable() |> 
+  kableExtra::kable_styling() |> 
+  kableExtra::scroll_box(height = "400px")
 ```
 
 ## Example
@@ -92,7 +112,7 @@ Data are available as
 # Citation
 
 ```{r}
-citation(gdho)
+citation("gdho")
 ```
 
 ## Related References

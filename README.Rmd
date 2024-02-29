@@ -36,6 +36,9 @@ location, as well as, operational information such as annual
 expenditure. The original database is updated annually and this package
 version uses data retrieved on September 20, 2023.
 
+[![Humanitarian Organization Headquarters
+Concentration](man/figures/world_map-1.png)](https://openwashdata.github.io/gdho/articles/examples.html)
+
 ## Installation
 
 You can install the development version of gdho from
@@ -103,7 +106,6 @@ readr::read_csv("data-raw/dictionary.csv") |>
   kableExtra::kable_styling() |> 
   kableExtra::scroll_box(height = "400px")
 ```
-
 
 ## Example
 

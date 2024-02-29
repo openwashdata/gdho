@@ -1,5 +1,5 @@
 ---
-title: "examples"
+title: "Where are the headquarters of humanitarian organizations?"
 ---
 
 ```{r, include = FALSE}
@@ -9,6 +9,86 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, message=FALSE, warning=FALSE}
+# read in libraries
 library(gdho)
+library(tidyverse)
+library(sf) # for geolocation 
+library(rnaturalearth) # for geolocation 
+library(viridis)  
 ```
+
+In this demo, we will show you how to plot a map to reflect the headquarter concentration of the humanitarian headquarters around the world. At the end of the demo, you will learn how to:
+
+-   Summarize headquarter information from `gdho` data
+-   Combine `gdho` data with external geolocation data
+-   Visualize a choropleth map about headquarter location distribution
+
+# 1. Data processing: summarize headquarters
+
+First, we want to get a table showing how many headquarters each country has. We transform the column `hq_location` to get the information:
+
+```{r}
+gdho_hq <- gdho |>
+  filter(!is.na(hq_location)) |> # remove NA data 
+  group_by(hq_location) |> # group by countries
+  summarise(count = n()) |> # count the number of headquarters of each country
+  arrange(desc(count)) # sort by descending order
+  
+gdho_hq |>
+  head()
+```
+
+We can see that the top six countries having the most humanitarian organization headquarters are United States, Somalia, Afgahnistan, Pakistan, Colombia and Ukraine.
+
+# 2. Data combination: join with geodata
+
+To plot a choropleth map, we also need to acquire geolocation information of the countries (e.g. the borders). Here we use the package `rnaturalearth` and `sf` to help. The package `rnaturalearth` contains geodata about the countries in the world, and we simply import this dataset and combine it with our `gdho` data.
+
+```{r}
+world <- rnaturalearth::ne_countries(returnclass = "sf")
+
+ho_map <- left_join(world, gdho_hq, by = c("name_long" = "hq_location"))
+```
+
+# 3. Map visualization: concentration of the headquarters
+
+Now, we have a data table that contains all information we need: the counts of humanitarian organization headquarters each country has, and the geo-information of each country. We start by plotting the world view of the headquarter concentration.
+
+```{r world_map}
+ggplot() +
+  theme_void() +
+  geom_sf(data = ho_map, aes(fill = count), color = "white", lwd = 0) + # plot map
+    scale_fill_viridis(trans = "log", breaks=c(1,10,50,100,300), 
+                       name = "Num. Headquarters",
+                       guide = guide_legend(keyheight = unit (2, units = "mm"),
+                                            label.position = "bottom", 
+                                            title.position = 'top', nrow = 1)) + 
+  labs(
+    title = "Humanitarian Organization Headquarters Concentration",
+    subtitle = "Number of headquarters per country"
+  ) + # add metadata
+  theme(
+    plot.background = element_rect(fill = "#f5f5f2", color = NA),
+    legend.position = c(0.13, 0.15)
+  ) + # polish the appearance
+  coord_sf(ylim = c(-50, 90)) # Remove antarctic
+```
+
+Now we have seen how the headquarters are distributed globally, it may worth zoom in to see in detail. For example, let's check out Africa:
+
+```{r africa_map}
+af_map <- ho_map |> filter(continent == "Africa") # Filter data with only African countries
+ggplot() +
+  theme_void() +
+  geom_sf(data = af_map, aes(fill = count), color = "white", lwd = 0.5) +
+    scale_fill_viridis(trans = "log", breaks=c(1,5,10,20,50,100)) +
+  labs(
+    title = "Humanitarian Organization Headquarters Concentration",
+    subtitle = "Number of headquarters per country in Africa"
+  ) 
+```
+
+References:
+
+[1] [Choropleth map with R and ggplot2](https://r-graph-gallery.com/327-chloropleth-map-from-geojson-with-ggplot2.html)

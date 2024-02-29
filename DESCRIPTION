@@ -1,9 +1,12 @@
 Package: gdho
 Title: Global Database of Humanitarian Organizations 
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person("Mian", "Zhong", , "mzhong@ethz.ch", role = c("aut", "cre"),
-           comment = c(ORCID = "0009-0009-4546-7214"))
+           comment = c(ORCID = "0009-0009-4546-7214")),
+    person("Abby", "Stoddard", role = "ctb"),
+    person("Tichakunda", "Mangono", role = "ctb")
+  )
 Description: A dataset of global humanitarian organizations collected by Humanitarian Outcomes.
 License: CC BY 4.0
 Encoding: UTF-8
@@ -13,4 +16,4 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Config/Needs/website: rmarkdown
-Date: 2024-02-28
+Date: 2024-02-29

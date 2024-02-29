@@ -90,10 +90,11 @@ library(gdho)
 The `gdho` data set has `r {ncol(gdho)}` variables and `r {nrow(gdho)}`
 observations.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 gdho |>
   head() |>
-  gt::gt()
+  gt::gt() |>
+  gt::as_raw_html()
 ```
 
 For an overview of the variable names, see the following table.

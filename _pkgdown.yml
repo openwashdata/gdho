@@ -1,16 +1,16 @@
 
-url: https://github.com/gdho/washopenresearch
+url: https://github.com/openwashdata/gdho
 template:
   bootstrap: 5
   includes:
     in_header: |
-      <script defer data-domain="gdho.github.io/washopenresearch" src="https://plausible.io/js/script.js"></script>
+      <script defer data-domain="openwashdata.github.io/gdho" src="https://plausible.io/js/script.js"></script>
 
 home:
   links:
     - icon: github
       text: GitHub repository
-      href: https://github.com/gdho/washopenresearch
+      href: https://github.com/openwashdata/gdho
   sidebar:
     structure: [links, citation, authors, dev, custom]
     components:

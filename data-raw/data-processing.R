@@ -3,7 +3,6 @@ library(readr)
 library(readxl)
 library(dplyr)
 library(stringr)
-library(openxlsx)
 
 ## Read raw data ---------------------------------------------------------------
 gdho_raw <- readr::read_csv("./data-raw/gdho.csv", skip = 1)
@@ -13,6 +12,10 @@ gdho_full <- gdho_raw |>
   dplyr::rename_all(~stringr::str_replace_all(.x, "[\\(\\)]", "")) |>
   dplyr::rename_all(~stringr::str_replace_all(.x, " ", "_")) |>
   dplyr::rename_all(tolower) #TODO: country names need more cleaning, remove ","
+
+## Encoding UTF-8 --------------------------------------------------------------
+gdho_full <- gdho_full |>
+  mutate(across(where(is.character), stringi::stri_enc_toutf8, ))
 
 ## Modify data types -----------------------------------------------------------
 ### to integer:
@@ -47,9 +50,6 @@ gdho_full <- gdho_full |>
 ### TODO: separate ope_original_currency into 2 columns
 ### TODO:staff_, natl_, intl_imputed do not indicate numbers but some categories which are not documented
 
-## Encoding UTF-8 --------------------------------------------------------------
-gdho_full <- gdho_full |>
-  mutate(across(where(is.character), stringi::stri_enc_toutf8))
 
 ## Build dataset gdho ----------------------------------------------------------
 gdho <- gdho_full[1:33] # a shorter version that does not include all country columns
@@ -83,7 +83,7 @@ if (!dir.exists(extdata_path)) {
 readr::write_csv(gdho, "./inst/extdata/gdho.csv")
 readr::write_csv(gdho_full, "./inst/extdata/gdho_full.csv")
 ## XLSX file
-openxlsx::write.xlsx(gdho, "./inst/extdata/gdho.xlsx")
-openxlsx::write.xlsx(gdho_full, "./inst/extdata/gdho_full.xlsx")
+writexl::write_xlsx(gdho, "./inst/extdata/gdho.xlsx")
+writexl::write_xlsx(gdho_full, "./inst/extdata/gdho_full.xlsx")
 
 

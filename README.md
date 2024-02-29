@@ -36,17 +36,26 @@ file from the table below.
 | gdho_full | [Download CSV](https://github.com/openwashdata/gdho/raw/main/inst/extdata/gdho_full.csv) | [Download XLSX](https://github.com/openwashdata/gdho/raw/main/inst/extdata/gdho_full.xlsx) |
 | gdho      | [Download CSV](https://github.com/openwashdata/gdho/raw/main/inst/extdata/gdho.csv)      | [Download XLSX](https://github.com/openwashdata/gdho/raw/main/inst/extdata/gdho.xlsx)      |
 
-# Introduction
+## Data
 
-# Data
+The package provides access to 2 datasets `gdho` and `gdho_full`. They
+are essentially the same data where the former is a concise version that
+removes detailed country columns (200+ columns) about whether this
+country has the humanitarian organization. Therefore here we only
+describe the dataset `gdho`.
 
-The package provides access to XX datasets …
+> All the organisations included the database have responded to
+> humanitarian needs in at least one emergency context, individually or
+> in partnership with other organisations, even if their stated mission
+> is not strictly humanitarian. Not included are NGOs devoted to
+> development, human rights, or political causes, or that do not work in
+> emergency settings.
 
 ``` r
 library(gdho)
 ```
 
-    The `gdho` data set has {ncol(gdho)} variables and {nrow(gdho)} observations. For an overview of the variable names, see the following table.  
+The `gdho` data set has 33 variables and 4556 observations.
 
 ``` r
 gdho |>
@@ -54,20 +63,20 @@ gdho |>
   gt::gt()
 ```
 
-<div id="mqfbhldnhm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mqfbhldnhm table {
+<div id="horpwmqnsa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#horpwmqnsa table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-&#10;#mqfbhldnhm thead, #mqfbhldnhm tbody, #mqfbhldnhm tfoot, #mqfbhldnhm tr, #mqfbhldnhm td, #mqfbhldnhm th {
+&#10;#horpwmqnsa thead, #horpwmqnsa tbody, #horpwmqnsa tfoot, #horpwmqnsa tr, #horpwmqnsa td, #horpwmqnsa th {
   border-style: none;
 }
-&#10;#mqfbhldnhm p {
+&#10;#horpwmqnsa p {
   margin: 0;
   padding: 0;
 }
-&#10;#mqfbhldnhm .gt_table {
+&#10;#horpwmqnsa .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -92,11 +101,11 @@ gdho |>
   border-left-width: 2px;
   border-left-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_caption {
+&#10;#horpwmqnsa .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-&#10;#mqfbhldnhm .gt_title {
+&#10;#horpwmqnsa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -107,7 +116,7 @@ gdho |>
   border-bottom-color: #FFFFFF;
   border-bottom-width: 0;
 }
-&#10;#mqfbhldnhm .gt_subtitle {
+&#10;#horpwmqnsa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -118,7 +127,7 @@ gdho |>
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
-&#10;#mqfbhldnhm .gt_heading {
+&#10;#horpwmqnsa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -129,12 +138,12 @@ gdho |>
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_bottom_border {
+&#10;#horpwmqnsa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_col_headings {
+&#10;#horpwmqnsa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -148,7 +157,7 @@ gdho |>
   border-right-width: 1px;
   border-right-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_col_heading {
+&#10;#horpwmqnsa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -167,7 +176,7 @@ gdho |>
   padding-right: 5px;
   overflow-x: hidden;
 }
-&#10;#mqfbhldnhm .gt_column_spanner_outer {
+&#10;#horpwmqnsa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -178,13 +187,13 @@ gdho |>
   padding-left: 4px;
   padding-right: 4px;
 }
-&#10;#mqfbhldnhm .gt_column_spanner_outer:first-child {
+&#10;#horpwmqnsa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
-&#10;#mqfbhldnhm .gt_column_spanner_outer:last-child {
+&#10;#horpwmqnsa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
-&#10;#mqfbhldnhm .gt_column_spanner {
+&#10;#horpwmqnsa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -195,10 +204,10 @@ gdho |>
   display: inline-block;
   width: 100%;
 }
-&#10;#mqfbhldnhm .gt_spanner_row {
+&#10;#horpwmqnsa .gt_spanner_row {
   border-bottom-style: hidden;
 }
-&#10;#mqfbhldnhm .gt_group_heading {
+&#10;#horpwmqnsa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -223,7 +232,7 @@ gdho |>
   vertical-align: middle;
   text-align: left;
 }
-&#10;#mqfbhldnhm .gt_empty_group_heading {
+&#10;#horpwmqnsa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -237,13 +246,13 @@ gdho |>
   border-bottom-color: #D3D3D3;
   vertical-align: middle;
 }
-&#10;#mqfbhldnhm .gt_from_md > :first-child {
+&#10;#horpwmqnsa .gt_from_md > :first-child {
   margin-top: 0;
 }
-&#10;#mqfbhldnhm .gt_from_md > :last-child {
+&#10;#horpwmqnsa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
-&#10;#mqfbhldnhm .gt_row {
+&#10;#horpwmqnsa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -261,7 +270,7 @@ gdho |>
   vertical-align: middle;
   overflow-x: hidden;
 }
-&#10;#mqfbhldnhm .gt_stub {
+&#10;#horpwmqnsa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -273,7 +282,7 @@ gdho |>
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#mqfbhldnhm .gt_stub_row_group {
+&#10;#horpwmqnsa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -286,13 +295,13 @@ gdho |>
   padding-right: 5px;
   vertical-align: top;
 }
-&#10;#mqfbhldnhm .gt_row_group_first td {
+&#10;#horpwmqnsa .gt_row_group_first td {
   border-top-width: 2px;
 }
-&#10;#mqfbhldnhm .gt_row_group_first th {
+&#10;#horpwmqnsa .gt_row_group_first th {
   border-top-width: 2px;
 }
-&#10;#mqfbhldnhm .gt_summary_row {
+&#10;#horpwmqnsa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -301,14 +310,14 @@ gdho |>
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#mqfbhldnhm .gt_first_summary_row {
+&#10;#horpwmqnsa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_first_summary_row.thick {
+&#10;#horpwmqnsa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
-&#10;#mqfbhldnhm .gt_last_summary_row {
+&#10;#horpwmqnsa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -317,7 +326,7 @@ gdho |>
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_grand_summary_row {
+&#10;#horpwmqnsa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -326,7 +335,7 @@ gdho |>
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#mqfbhldnhm .gt_first_grand_summary_row {
+&#10;#horpwmqnsa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -335,7 +344,7 @@ gdho |>
   border-top-width: 6px;
   border-top-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_last_grand_summary_row_top {
+&#10;#horpwmqnsa .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -344,10 +353,10 @@ gdho |>
   border-bottom-width: 6px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_striped {
+&#10;#horpwmqnsa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
-&#10;#mqfbhldnhm .gt_table_body {
+&#10;#horpwmqnsa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -355,7 +364,7 @@ gdho |>
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_footnotes {
+&#10;#horpwmqnsa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -368,7 +377,7 @@ gdho |>
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_footnote {
+&#10;#horpwmqnsa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -376,7 +385,7 @@ gdho |>
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#mqfbhldnhm .gt_sourcenotes {
+&#10;#horpwmqnsa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -389,57 +398,57 @@ gdho |>
   border-right-width: 2px;
   border-right-color: #D3D3D3;
 }
-&#10;#mqfbhldnhm .gt_sourcenote {
+&#10;#horpwmqnsa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
-&#10;#mqfbhldnhm .gt_left {
+&#10;#horpwmqnsa .gt_left {
   text-align: left;
 }
-&#10;#mqfbhldnhm .gt_center {
+&#10;#horpwmqnsa .gt_center {
   text-align: center;
 }
-&#10;#mqfbhldnhm .gt_right {
+&#10;#horpwmqnsa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
-&#10;#mqfbhldnhm .gt_font_normal {
+&#10;#horpwmqnsa .gt_font_normal {
   font-weight: normal;
 }
-&#10;#mqfbhldnhm .gt_font_bold {
+&#10;#horpwmqnsa .gt_font_bold {
   font-weight: bold;
 }
-&#10;#mqfbhldnhm .gt_font_italic {
+&#10;#horpwmqnsa .gt_font_italic {
   font-style: italic;
 }
-&#10;#mqfbhldnhm .gt_super {
+&#10;#horpwmqnsa .gt_super {
   font-size: 65%;
 }
-&#10;#mqfbhldnhm .gt_footnote_marks {
+&#10;#horpwmqnsa .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
-&#10;#mqfbhldnhm .gt_asterisk {
+&#10;#horpwmqnsa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
-&#10;#mqfbhldnhm .gt_indent_1 {
+&#10;#horpwmqnsa .gt_indent_1 {
   text-indent: 5px;
 }
-&#10;#mqfbhldnhm .gt_indent_2 {
+&#10;#horpwmqnsa .gt_indent_2 {
   text-indent: 10px;
 }
-&#10;#mqfbhldnhm .gt_indent_3 {
+&#10;#horpwmqnsa .gt_indent_3 {
   text-indent: 15px;
 }
-&#10;#mqfbhldnhm .gt_indent_4 {
+&#10;#horpwmqnsa .gt_indent_4 {
   text-indent: 20px;
 }
-&#10;#mqfbhldnhm .gt_indent_5 {
+&#10;#horpwmqnsa .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1088,7 +1097,36 @@ Approximate humanitarian expenditure adjusted for inflation
 
 ## Example
 
-Write a demo snippet here.
+The humanitarian organizations are categorized into 5 types: INGO
+(International NGO), NNGO (National NGO), UN (United Nation), Red
+Cross/Crescent, and NA (Not Available). Most of the organizations fall
+into the NNGO type. For different types of organizations, how is their
+organization reach distribute?
+
+``` r
+ggplot(data = gdho) +
+  geom_bar(aes(x = type, fill=`international_or_national`)) +
+  labs(title = "Organization type distribution", fill = "organization reach")
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+Throughout the years, how do different types of humanitarian
+organizations increase?
+
+``` r
+count_by_year <- gdho |>
+  filter(!is.na(year_founded)) |>
+  group_by(year_founded, type) |>
+  summarise(count = n())
+#> `summarise()` has grouped output by 'year_founded'. You can override using the
+#> `.groups` argument.
+ggplot(data = count_by_year) +
+  geom_line(aes(x = year_founded, y = count, color = type)) +
+  labs(title = "Temporal trend of founding humanitarian organizations", color = "organization type")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
 
 # License
 
@@ -1115,3 +1153,6 @@ citation("gdho")
 ```
 
 ## Related References
+
+\[1\] [GDHO project
+description](https://www.humanitarianoutcomes.org/projects/gdho)

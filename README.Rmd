@@ -65,19 +65,27 @@ read_csv("data-raw/dictionary.csv") |>
 
 ```
 
-# Introduction
+## Data
 
-# Data
+The package provides access to 2 datasets `gdho` and `gdho_full`. They
+are essentially the same data where the former is a concise version that
+removes detailed country columns (200+ columns) about whether this
+country has the humanitarian organization. Therefore here we only
+describe the dataset `gdho`.
 
-The package provides access to XX datasets ...
+> All the organisations included the database have responded to
+> humanitarian needs in at least one emergency context, individually or
+> in partnership with other organisations, even if their stated mission
+> is not strictly humanitarian. Not included are NGOs devoted to
+> development, human rights, or political causes, or that do not work in
+> emergency settings.
 
 ```{r}
 library(gdho)
 ```
 
-```         
-The `gdho` data set has {ncol(gdho)} variables and {nrow(gdho)} observations. For an overview of the variable names, see the following table.  
-```
+The `gdho` data set has `r {ncol(gdho)}` variables and `r {nrow(gdho)}`
+observations.
 
 ```{r}
 gdho |>
@@ -85,7 +93,7 @@ gdho |>
   gt::gt()
 ```
 
-For an overview of the variable names, see the following table.  
+For an overview of the variable names, see the following table.
 
 ```{r, echo=FALSE}
 readr::read_csv("data-raw/dictionary.csv") |>
@@ -96,12 +104,32 @@ readr::read_csv("data-raw/dictionary.csv") |>
   kableExtra::scroll_box(height = "400px")
 ```
 
+
 ## Example
 
-Write a demo snippet here.
+The humanitarian organizations are categorized into 5 types: INGO
+(International NGO), NNGO (National NGO), UN (United Nation), Red
+Cross/Crescent, and NA (Not Available). Most of the organizations fall
+into the NNGO type. For different types of organizations, how is their
+organization reach distribute?
 
 ```{r}
+ggplot(data = gdho) +
+  geom_bar(aes(x = type, fill=`international_or_national`)) +
+  labs(title = "Organization type distribution", fill = "organization reach")
+```
 
+Throughout the years, how do different types of humanitarian
+organizations increase?
+
+```{r}
+count_by_year <- gdho |>
+  filter(!is.na(year_founded)) |>
+  group_by(year_founded, type) |>
+  summarise(count = n())
+ggplot(data = count_by_year) +
+  geom_line(aes(x = year_founded, y = count, color = type)) +
+  labs(title = "Temporal trend of founding humanitarian organizations", color = "organization type")
 ```
 
 # License
@@ -116,3 +144,6 @@ citation("gdho")
 ```
 
 ## Related References
+
+[1] [GDHO project
+description](https://www.humanitarianoutcomes.org/projects/gdho)

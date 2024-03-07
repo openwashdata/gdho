@@ -9,6 +9,7 @@ type: software
 license: CC-BY-4.0
 title: 'gdho: Global Database of Humanitarian Organizations'
 version: 0.0.1
+doi: 10.5281/zenodo.10727977
 abstract: A dataset of global humanitarian organizations collected by Humanitarian
   Outcomes.
 authors:
@@ -20,22 +21,9 @@ authors:
   given-names: Abby
 - family-names: Mangono
   given-names: Tichakunda
-date-released: '2024-02-29'
+date-released: '2024-03-07'
 contact:
 - family-names: Zhong
   given-names: Mian
   email: mzhong@ethz.ch
   orcid: https://orcid.org/0009-0009-4546-7214
-references:
-- type: software
-  title: 'R: A Language and Environment for Statistical Computing'
-  notes: Depends
-  url: https://www.R-project.org/
-  authors:
-  - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
-  institution:
-    name: R Foundation for Statistical Computing
-  version: '>= 2.10'

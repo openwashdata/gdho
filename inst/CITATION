@@ -1,0 +1,16 @@
+
+bibentry(bibtype = "Misc",
+         key = "zhong_etall:2024",
+         title = "gdho: Global Database of Humanitarian Organizations",
+         author = c(person(given = "Mian",
+                           family = "Zhong",
+                           email = "mzhong@ethz.ch",
+                           comment = c(ORCID = "0009-0009-4546-7214")),
+                    person(given = "Abby",
+                           family = "Stoddard"),
+                    person(given = "Tichakunda",
+                           family = "Mangono")),
+         year = "2024",
+         doi = "10.5281/zenodo.10727977",
+         abstract = "A dataset of global humanitarian organizations collected by Humanitarian Outcomes.",
+         version = "0.0.1")

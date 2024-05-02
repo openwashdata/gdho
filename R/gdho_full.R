@@ -1,3 +1,13 @@
+#' Global Database of Humanitarian Organization (full version)
+#'
+#' This dataset collected by Humanitarian Outcomes provides insights about humanitarian
+#' organizations, such as name, website, headquarter information, and etc. This full version
+#' includes the information about how many operational units a humanitarian organization has
+#' in each country, which is represented as one column per country resulting in 273 variables
+#' compared with the short version "gdho" (33 variables).
+#'
+#' @format A tibble with 4556 rows and 273 variables
+#'
 #' \describe{
 #'   \item{id}{A unique Id for each organisation}
 #'   \item{year}{Latest year information is available for}

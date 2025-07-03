@@ -5,7 +5,7 @@
 \alias{gdho_full}
 \title{Global Database of Humanitarian Organization (full version)}
 \format{
-A tibble with 4556 rows and 273 variables
+A tibble with 4548 rows and 275 variables
 
 \describe{
 \item{id}{A unique Id for each organisation}
@@ -38,11 +38,16 @@ A tibble with 4556 rows and 273 variables
 \item{ope/staff}{Percent of operational program expenditure per staff member}
 \item{ope_inflation_adjusted}{Operational program expenditure adjusted for inflation}
 \item{ope_original_currency}{Actual approximate operational program expenditure in original currency used by organisation}
+\item{ope_original_amount}{Operational program expenditure amount in original currency}
+\item{ope_original_currency_code}{Currency code for operational program expenditure}
 \item{humexp_approx_usd}{Approximate humanitarian expenditure in USD}
 \item{humexp_imputed}{Imputed approximate humanitarian expenditure in USD}
 \item{humexp_inflation_adjusted}{Approximate humanitarian expenditure adjusted for inflation}
-\item{countries}{Individual countries where organisations are operational}
+\item{afghanistan..zimbabwe}{240 columns representing operational presence in individual countries}
 }
+}
+\source{
+Humanitarian Outcomes \url{https://www.humanitarianoutcomes.org/projects/gdho}
 }
 \usage{
 gdho_full
@@ -51,7 +56,7 @@ gdho_full
 This dataset collected by Humanitarian Outcomes provides insights about humanitarian
 organizations, such as name, website, headquarter information, and etc. This full version
 includes the information about how many operational units a humanitarian organization has
-in each country, which is represented as one column per country resulting in 273 variables
-compared with the short version "gdho" (33 variables).
+in each country, which is represented as one column per country resulting in 275 variables
+compared with the short version "gdho" (35 variables).
 }
 \keyword{datasets}

@@ -5,7 +5,7 @@
 #' excludes the information about how many operational units a humanitarian organization has
 #' in each country, where you can find it in data gdho_full.
 #'
-#' @format A tibble with 4556 rows and 33 variables
+#' @format A tibble with 4548 rows and 35 variables
 #'
 #' \describe{
 #'   \item{id}{A unique Id for each organisation}
@@ -38,10 +38,13 @@
 #'   \item{ope/staff}{Percent of operational program expenditure per staff member}
 #'   \item{ope_inflation_adjusted}{Operational program expenditure adjusted for inflation}
 #'   \item{ope_original_currency}{Actual approximate operational program expenditure in original currency used by organisation}
+#'   \item{ope_original_amount}{Operational program expenditure amount in original currency}
+#'   \item{ope_original_currency_code}{Currency code for operational program expenditure}
 #'   \item{humexp_approx_usd}{Approximate humanitarian expenditure in USD}
 #'   \item{humexp_imputed}{Imputed approximate humanitarian expenditure in USD}
 #'   \item{humexp_inflation_adjusted}{Approximate humanitarian expenditure adjusted for inflation}
 #' }
 #'
+#' @source Humanitarian Outcomes <https://www.humanitarianoutcomes.org/projects/gdho>
 
 "gdho"

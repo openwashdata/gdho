@@ -5,7 +5,14 @@ library(dplyr)
 library(stringr)
 
 ## Read raw data ---------------------------------------------------------------
-gdho_raw <- readr::read_csv("./data-raw/gdho.csv", skip = 1)
+# The raw CSV is Latin-1 (ISO-8859-1) encoded, for example accented French and
+# Spanish organisation names. Read it with that encoding so readr converts the
+# text to UTF-8.
+gdho_raw <- readr::read_csv(
+  "./data-raw/gdho.csv",
+  skip = 1,
+  locale = readr::locale(encoding = "latin1")
+)
 
 ## Rename column names ---------------------------------------------------------
 gdho_full <- gdho_raw |>
@@ -15,8 +22,12 @@ gdho_full <- gdho_raw |>
   dplyr::rename_all(tolower)
 
 ## Encoding UTF-8 --------------------------------------------------------------
-gdho_full <- gdho_full |>
-  mutate(across(where(is.character), \(x) stringi::stri_enc_toutf8(x)))
+# The text is converted when the raw file is read (see above). Stop here if
+# any value is still not valid UTF-8.
+stopifnot(all(unlist(lapply(
+  Filter(is.character, gdho_full),
+  function(x) validUTF8(x[!is.na(x)])
+))))
 
 ## Remove duplicate rows -------------------------------------------------------
 gdho_full <- gdho_full |>

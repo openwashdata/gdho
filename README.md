@@ -769,7 +769,7 @@ citation("gdho")
 #>     year = {2024},
 #>     doi = {10.5281/zenodo.10727977},
 #>     abstract = {A dataset of global humanitarian organizations collected by Humanitarian Outcomes.},
-#>     version = {0.0.1},
+#>     version = {0.0.2},
 #>   }
 ```
 

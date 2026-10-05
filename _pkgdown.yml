@@ -1,5 +1,5 @@
 
-url: https://github.com/openwashdata/gdho
+url: https://openwashdata.github.io/gdho/
 template:
   bootstrap: 5
   includes:

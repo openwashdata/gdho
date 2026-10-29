@@ -15,7 +15,7 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 3.5)
 LazyData: true
-Config/Needs/website: rmarkdown, tidyverse
+Config/Needs/website: rmarkdown, tidyverse, sf, rnaturalearth, rnaturalearthdata, viridis
 Date: 2024-02-29
 Suggests: 
     testthat (>= 3.0.0)

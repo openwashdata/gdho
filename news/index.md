@@ -7,9 +7,9 @@
   values of `name`, 7 of `abbreviated_name` and 1 of `website` in `gdho`
   and `gdho_full` show their accented letters correctly (for example
   “Ayuda en Acción”, “Trócaire”). The CSV and XLSX exports are rebuilt
-  (#9).
+  ([\#9](https://github.com/openwashdata/gdho/issues/9)).
 - Rebuilding the data from the processing script also restores the
   values of the category columns `type`, `international_or_national`,
   `sector` and `religious_or_secular`, which were missing in every row,
   and stores all eight category columns as factors, as the script
-  intends (#9).
+  intends ([\#9](https://github.com/openwashdata/gdho/issues/9)).

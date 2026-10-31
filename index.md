@@ -1,5 +1,7 @@
 # gdho
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 The goal of `gdho` is to provide a detailed list of global humanitarian
 organizations complied by [Humanitarian
 Outcomes](https://www.humanitarianoutcomes.org/projects/gdho) which

@@ -11,6 +11,9 @@
 
 ## Citation
 
+Source:
+[`inst/CITATION`](https://github.com/openwashdata/gdho/blob/main/inst/CITATION)
+
 Zhong M, Stoddard A, Mangono T (2024). “gdho: Global Database of
 Humanitarian Organizations.”
 [doi:10.5281/zenodo.10727977](https://doi.org/10.5281/zenodo.10727977).

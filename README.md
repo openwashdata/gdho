@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gdho
+# gdho <a href="https://openwashdata.org"><img src="man/figures/logo.png" align="right" width="120" alt="openwashdata" /></a>
 
 <!-- badges: start -->
 
@@ -11,8 +11,6 @@
 [![DOI](https://zenodo.org/badge/694570649.svg)](https://zenodo.org/doi/10.5281/zenodo.10727738)
 
 <!-- badges: end -->
-
-A data package published by [openwashdata](https://openwashdata.org).
 
 The goal of `gdho` is to provide a detailed list of global humanitarian
 organizations complied by [Humanitarian
@@ -779,3 +777,5 @@ citation("gdho")
 
 \[1\] [GDHO project
 description](https://www.humanitarianoutcomes.org/projects/gdho)
+
+Published by openwashdata, <https://openwashdata.org>.

@@ -9,3 +9,5 @@
 ^CITATION\.cff$
 ^vignettes/articles$
 ^\.github$
+^_brand\.yml$
+^logos$
